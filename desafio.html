@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquete</title>
+</head>
+<style type="text/css">
+    .circle{
+        width: 400px;
+        height: 400px;
+        background-color: orange;
+        border-radius: 50%;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        font-size: 30px;  
+        margin: 0 auto; 
+    }
+    .button{
+        align-items: center;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+}
+
+    .sim{
+        background-color: rgb(76, 218, 76);
+        width: 70px;
+        height: 50px;
+        border-radius:50px ;
+        
+        
+    }
+    .nao{
+        background-color: red;
+        width: 70px;
+        height: 50px;
+        border-radius: 50px;    
+    }
+    .result{       
+        position: relative;         
+        bottom: -80px;
+        left: 500px;
+        color: red; 
+        background-color: white;
+    }
+    .result1{
+        background-color: rgb(76, 218, 76);
+        position: relative;
+        bottom: -80px;
+        left: 500px;
+        width: 10px;
+        border-radius: 10px;
+        border: 1px solid;
+    }
+    .result2{
+        background-color: red;
+        position: relative;
+        bottom: -80px;
+        left: 500px;
+        width: 10px;
+        border-radius: 10px;
+        border: 1px solid;
+    }
+
+    
+</style>
+<body>
+        <div class="circle">
+            Você é a favor do lockdown, em cidades com situação de colapso no sistema de saúde?
+        </div>
+        <div class="button">
+            <button type="button" class="sim" onclick="simpi()">Sim</button>
+            <button type="button" class="nao" onclick="naopi()">Não</button>
+        </div>
+        
+        <div class="result"><b>Resultado</b></div>
+        <div class="result" id="sim" > SIM </div>
+        <div class="result" id="não" > NÃO</div>
+        <div class="result1" id="ifs">0</div>
+        <div class="result2" id="ifn">0</div>
+        
+</body>
+<script type="text/javascript">
+let encremento = 0;
+let largura = 0;
+let mover = 540;
+let count = 0;
+let largura02 = 0;
+let jiij01 = 5;
+let jiij02 = 5;
+
+function simpi(){
+    encremento++;
+    largura = largura + 20;
+    document.getElementById("ifs").innerHTML = encremento;
+    document.querySelector("#ifs").style.width = largura+"px";
+    if (encremento > jiij02){
+        jiij01 = encremento;
+        mover = mover - 8;
+       // document.querySelector(".result").style.left = mover+"px";
+        //document.querySelector("#sim").style.left = mover+"px";
+       // document.querySelector("#ifs").style.left = mover+"px";
+       // document.querySelector("#nao").style.left = mover+"px";
+        //document.querySelector("#ifn").style.left = mover+"px";       
+}
+}
+
+function naopi(){
+    count++;
+    document.getElementById("ifn").innerHTML = count;
+    largura02 = largura02 + 20;
+    document.querySelector("#ifn").style.width = largura02+"px";
+    if (count > jiij01){
+        jiij02 = count;
+        mover = mover - 8;
+        //document.querySelector(".result").style.left = mover+"px";
+        /*document.querySelector("#ifs").style.left = mover+"px";
+        document.querySelector("#ifn").style.left = mover+"px";
+        document.querySelector("#nao").style.left = mover+"px";
+        document.querySelector("#sim").style.left = mover+"px";*/
+}
+}
+</script>
+</html>
